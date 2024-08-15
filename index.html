@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hyderabadi</title>
+    <link rel="stylesheet" href="./navbar.css">
+    <script>
+        var total = 0;
+        function cart(name, cost) {
+            alert("You selected: " + name + " for " + cost);
+            var qty = prompt("Enter Quantity:");
+            total = total + parseInt(cost) * parseInt(qty);
+            var x = document.getElementById('cart').innerHTML;
+            x = x + "<tr><th>" + name + "</th><th>" + cost + "</th><th>" + parseInt(cost) * parseInt(qty) + "</th></tr>";
+            document.getElementById('cart').innerHTML = x;
+            document.getElementById('total').innerHTML = total;
+        }
+    </script>
+    <style>
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px;
+        }
+
+        .navbar img {
+            width: 150px;
+        }
+
+        .nav-links, .nav-auth {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li, .nav-auth li {
+            display: inline;
+        }
+
+        .nav-links a, .nav-auth a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            width: 200px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div>
+            <img src="./1.jpg" alt="Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#Catalog">Catalog</a></li>
+            <li><a href="#CartPage">CartPage</a></li>
+            <li><a href="#Contact">Contact</a></li>
+        </ul>
+        <ul class="nav-auth">
+            <li><a href="./register.html">Register</a></li>
+        </ul>
+    </nav>
+
+    <section id="Home">
+        <br><center><h2>Welcome to Hyderabadi Cuisine</h2></center><br>
+        <div style="text-align: center; padding: 20px;">
+            <p>Hyderabad is known as the City of Pearls, as it had once flourished as a global center for trade of rare diamonds, emeralds as well as natural pearls.
+                Mecca Masjid, Charminar, Golconda fort, QutubShahi tombs, Paigah tombs are some of the historic structures. There are many other structures like Falaknuma Palace, Chowmohalla Palace, TaramatiBaradari etc., which are quite famous attracting tourists from all over. Birla Mandir, Jagannath temple, Salarjung Museum, Mahankali temple, Hussain Sagar lake, Mir Alam Tank, Nehru Zoological park, KBR park , Mrugavani National Park, are some of the other major tourist attractions.</p>
+        </div>
+    </section>
+
+    <section id="Catalog">
+        <br><center><h2>Food Items</h2></center><br>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="dosa.avif" alt="Dosa">
+                <div class="caption">Ram ki Bandi Dosa<br>120/-<br><button onclick="cart('Ram ki Bandi Dosa', 120)">Add to Cart</button></div>
+            </div>
+            <div class="gallery-item">
+                <img src="biryani.jpeg" alt="Biryani">
+                <div class="caption">Shadab Biryani<br>400/-<br><button onclick="cart('Shadab Biryani', 400)">Add to Cart</button></div>
+            </div>
+            <div class="gallery-item">
+                <img src="chai.jpg" alt="Chai">
+                <div class="caption">Cafe Niloufer Chai<br>70/-<br><button onclick="cart('Cafe Niloufer Chai', 70)">Add to Cart</button></div>
+            </div>
+            <div class="gallery-item">
+                <img src="paya.jpg" alt="Paya">
+                <div class="caption">Paya Sherwa<br>440/-<br><button onclick="cart('Paya Sherwa', 440)">Add to Cart</button></div>
+            </div>
+            <div class="gallery-item">
+                <img src="haleem.avif" alt="Haleem">
+                <div class="caption">Mutton Haleem<br>(only Ramzan)<br>250/-<br><button onclick="cart('Mutton Haleem', 250)">Add to Cart</button></div>
+            </div>
+            <div class="gallery-item">
+                <img src="qubani.jpeg" alt="Qubani">
+                <div class="caption">Qubani ka Meetha<br>50/-<br><button onclick="cart('Qubani ka Meetha', 50)">Add to Cart</button></div>
+            </div>
+        </div>
+    </section>
+
+    <br><br><br><hr><br><br><br>
+
+    <section id="CartPage">
+        <center>
+            <h1><b><u>Shopping Cart</u></b></h1><br><hr>
+            <table border="2" width="70%">
+                <tr><th>Product</th><th>Cost</th><th>Total</th></tr>
+                <tbody id="cart"></tbody>
+                <tr><th>Total:</th><th colspan="2"><span id="total"></span></th></tr>
+            </table>
+        </center>
+    </section>
+
+    <section id="Contact">
+        <center>
+            <h2>Contact Us</h2>
+            <p>Mobile  ::  8106698018 <br>email  ::  aliminatiakshith@gmail.com</p>
+        </center>
+    </section>
+
+    <footer>
+        <p>&copy; 22EG105G03 Project</p>
+    </footer>
+</body>
+</html>
